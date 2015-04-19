@@ -5,11 +5,11 @@
 # import lxml.html
 #
 # # Read in a page
-# html = scraperwiki.scrape("http://foo.com")
+html = scraperwiki.scrape("http://www.imdb.com/title/tt2096672/soundtrack?ref_=tt_ql_trv_7")
 #
 # # Find something on the page using css selectors
-# root = lxml.html.fromstring(html)
-# root.cssselect("div[align='left']")
+root = lxml.html.fromstring(html)
+root.cssselect("//*[@id="soundtracks_content"]/div[2]/div[1]/node()[count(preceding-sibling::br)=1]")
 #
 # # Write out to the sqlite database using scraperwiki library
 # scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
